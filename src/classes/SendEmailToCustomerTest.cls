@@ -28,7 +28,7 @@ private class SendEmailToCustomerTest {
         // after the testing stops, assert records were updated properly
         List<account> accResults = [select MailSent__c from Account where claimStatus__c = 'Approved'];
         for (Account accResult : accResults) {
-            System.assert(accResult.MailSent__c);
+            System.assertEquals(True, accResult.MailSent__c);
         }
     }
 
